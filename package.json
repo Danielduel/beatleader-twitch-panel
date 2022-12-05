@@ -1,0 +1,23 @@
+{
+    "name": "beatleader-panel",
+    "version": "0.0.1",
+    "type": "module",
+    "scripts": {
+        "dev": "vite",
+        "build": "vite build",
+        "preview": "vite preview",
+        "zip": "vite build"
+    },
+    "devDependencies": {
+        "@sveltejs/vite-plugin-svelte": "^1.4.0",
+        "autoprefixer": "^10.4.2",
+        "postcss": "^8.4.5",
+        "postcss-load-config": "^3.1.1",
+        "svelte": "^3.44.0",
+        "svelte-preprocess": "^4.10.1",
+        "tailwindcss": "^3.0.12",
+        "vite": "^3.2.4",
+        "vite-plugin-mkcert": "^1.10.1",
+        "zip-build": "^1.6.0"
+    }
+}
