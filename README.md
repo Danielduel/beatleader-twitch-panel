@@ -1,19 +1,35 @@
+
 # BeatLeader Twitch panel
 
-### Run
+## Running
 
-```sh
-npm install
-npm run dev
+You need to have Deno v1.28.0 or later installed to run this repo.
+
+Start a dev server:
+
+```
+$ deno task dev
 ```
 
-### Build for Twitch
+## Deploy
 
-```sh
-npm run zip
+Build production assets:
+
 ```
+$ deno task build
+```
+
+## Notes
+
+- You need to use `.mjs` or `.mts` extension for the `vite.config.[ext]` file.
+
+## Papercuts
+
+Currently there's a "papercut" for Deno users:
+
+- peer dependencies need to be referenced in `vite.config.js` - in this example
+  it is `react` and `react-dom` packages that need to be referenced
 
 ## Credits
 
-https://github.com/ajzbc/drg-loadout-twitch-extension was used as an Svelte panel sample.
 https://github.com/BeatLeader/beatleader-website main source for the UI.
