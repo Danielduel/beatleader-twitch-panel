@@ -1,0 +1,7 @@
+{
+  "imports": {
+    "react": "npm:react",
+    "react-dom/client": "npm:react-dom/client",
+    "@tanstack/react-query": "npm:@tanstack/react-query"
+  }
+}
