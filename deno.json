@@ -3,6 +3,7 @@
     "clean": "rm -rf ./node_modules ./deno.lock $HOME/.cache/deno",
     "dev": "deno run -A --unstable --node-modules-dir npm:vite@5.0.2",
     "build": "deno run -A --unstable --node-modules-dir npm:vite@5.0.2 build",
+    "build:ghp": "deno run -A --unstable --node-modules-dir npm:vite@5.0.2 --base='/beatleader-twitch-panel/' build",
     "preview": "deno run -A --unstable --node-modules-dir npm:vite@5.0.2 preview",
     "serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
   },
