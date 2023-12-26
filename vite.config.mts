@@ -15,17 +15,19 @@ import "npm:@fortawesome/fontawesome-free";
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  root: "src",
   build: {
+    outDir: "../dist",
     rollupOptions: {
       input: {
-        panel: "./src/pages/panel.html",
-        mobile: "./src/pages/mobile.html",
-        config: "./src/pages/config.html",
-        index: "./index.html",
+        panel: "./src/panel.html",
+        mobile: "./src/mobile.html",
+        config: "./src/config.html",
+        index: "./src/index.html",
         preview: "./src/preview.html",
       },
     },
-    assetsDir: "app",
+    assetsDir: ".",
   },
   plugins: [react(), tailwindcss()],
 });
