@@ -148,19 +148,32 @@ const ProfileSocial = (
     };
   }, [service]);
   return (
-    <div
-      className="text-xl px-2 py-1 rounded-xl rounded-r-none mt-2 ml-auto w-max hover:underline hover:cursor-pointer"
+    <a
+      target="_blank"
+      rel="noopener noreferrer nofollow"
+      href={link}
+      className="text-xl px-2 py-1 block rounded-xl rounded-r-none mt-2 ml-auto w-max hover:underline hover:cursor-pointer"
       style={memoStyle}
     >
       <ProfileSocialIcon service={service} />&nbsp;
       {service}
-    </div>
+    </a>
   );
 };
 
 const ProfileSocials = ({ socials }: Pick<PlayerProfile, "socials">) => {
   const sortedSocials = useMemo(
-    () => socials.sort((x, y) => y.service.length - x.service.length),
+    () => socials.sort((x, y) => {
+      const res = y.service.length - x.service.length;
+      if (res !== 0) return res;
+       // YouTube, Discord and Twitter are the same length
+       // But YouTube is visually the longest, then Discord, then Twitter
+      if (x.service === "YouTube") return -1;
+      if (y.service === "YouTube") return 1;
+      if (x.service === "Discord") return -1;
+      if (y.service === "Discord") return 1;
+      return res;
+    }),
     [socials],
   );
   return sortedSocials.map((social) => (
