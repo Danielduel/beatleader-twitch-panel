@@ -6,10 +6,5 @@
     "preview": "deno run -A --unstable --node-modules-dir npm:vite@5.0.2 preview",
     "serve": "deno run --allow-net --allow-read https://deno.land/std@0.157.0/http/file_server.ts dist/"
   },
-  "compilerOptions": {
-    "lib": [
-      "dom"
-    ]
-  },
   "importMap": "./importMap.json"
 }

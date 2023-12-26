@@ -1,4 +1,4 @@
-type ProfileSettings = {
+export type ProfileSettings = {
 	id: number;
 	bio: string | null;
 	message: string | null;

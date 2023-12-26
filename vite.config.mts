@@ -21,6 +21,8 @@ export default defineConfig({
         panel: "./src/pages/panel.html",
         mobile: "./src/pages/mobile.html",
         config: "./src/pages/config.html",
+        index: "./index.html",
+        preview: "./src/preview.html",
       },
     },
     assetsDir: "app",

@@ -77,3 +77,11 @@ button:focus-visible {
 .text-shadow {
   text-shadow: 2px 2px black;
 }
+
+.glass {
+  backdrop-filter: blur(5px) saturate(140%);
+  -webkit-backdrop-filter: blur(5px) saturate(140%);
+  background-color: #d5e3ff3a;
+  border-radius: 12px;
+  border: 0px solid rgba(255, 255, 255, 0.125);
+}
