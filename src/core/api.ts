@@ -10,6 +10,9 @@ export const useBeatLeaderUserInfo = (userId: number | string) => {
     queryFn: async () =>
       await fetch(
         `${url}/player/${userId}`,
+        {
+          mode: "no-cors"
+        }
       ).then((x) => x.json()),
   });
 
