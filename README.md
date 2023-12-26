@@ -1,6 +1,8 @@
 
 # BeatLeader Twitch panel
 
+Wireframe design: https://www.figma.com/file/DUoubAiS7LIAf3DNVVLBG4/Untitled
+
 ## Running
 
 You need to have Deno v1.28.0 or later installed to run this repo.

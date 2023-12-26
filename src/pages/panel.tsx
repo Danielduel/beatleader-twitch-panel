@@ -1,6 +1,6 @@
-import App from "../shared/App.tsx";
-import { QueryClient, QueryClientProvider, React, ReactDOM } from "../shared/deps.ts";
-import "../shared/index.css";
+import App from "../core/App.tsx";
+import { QueryClient, QueryClientProvider, React, ReactDOM } from "../core/deps.ts";
+import "../core/index.css";
 
 const queryClient = new QueryClient();
 

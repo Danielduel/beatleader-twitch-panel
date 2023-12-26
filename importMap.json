@@ -2,6 +2,9 @@
   "imports": {
     "react": "npm:react",
     "react-dom/client": "npm:react-dom/client",
-    "@tanstack/react-query": "npm:@tanstack/react-query"
+    "@tanstack/react-query": "npm:@tanstack/react-query",
+    "chart.js": "npm:chart.js@3.5.0",
+    "chartjs-adapter-luxon": "npm:chartjs-adapter-luxon@1.1.0",
+    "chartjs-plugin-zoom": "npm:chartjs-plugin-zoom@1.1.1"
   }
 }
