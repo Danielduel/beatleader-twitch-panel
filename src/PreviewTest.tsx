@@ -19,7 +19,7 @@ export const PreviewTest = () => {
       <h1>Test data:</h1>
       <div className="flex flex-wrap gap-5 mt-10 w-screen justify-around items-center">
         <BeatLeaderProfile userId="76561198023909718" />
-        <BeatLeaderProfile userId="76561198362923485" />
+        {/* <BeatLeaderProfile userId="76561198362923485" />
         <BeatLeaderProfile userId="76561198193496165" />
         <BeatLeaderProfile userId="76561198191796477" />
         <BeatLeaderProfile userId="76561198375641167" />
@@ -38,7 +38,7 @@ export const PreviewTest = () => {
         <BeatLeaderProfile userId="76561199002201939" />
         <BeatLeaderProfile userId="76561198100136966" />
         <BeatLeaderProfile userId="76561198015962837" />
-        <BeatLeaderProfile userId="76561198253678050" />
+        <BeatLeaderProfile userId="76561198253678050" /> */}
       </div>
     </div>
   );
