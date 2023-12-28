@@ -4,7 +4,7 @@ import { PlayerProfile, ProfileSettings } from "../../types/BeatLeader.ts";
 import { getOverlayUrlByName } from "../../utils/overlay.ts";
 
 const Flag = ({ countryCode }: { countryCode: string }) => (
-  <img className="h-5" src={`/assets/flags/${countryCode.toLowerCase()}.png`} />
+  <img className="h-5" src={`./assets/flags/${countryCode.toLowerCase()}.png`} />
 );
 
 function isLightColor(colorHex6: string) {
