@@ -11,7 +11,9 @@
       "npm:@types/react-dom": "npm:@types/react-dom@18.2.17",
       "npm:@vitejs/plugin-react-swc": "npm:@vitejs/plugin-react-swc@3.5.0_vite@5.0.2",
       "npm:@vituum/vite-plugin-tailwindcss": "npm:@vituum/vite-plugin-tailwindcss@1.1.0_postcss@8.4.31",
+      "npm:classnames": "npm:classnames@2.5.0",
       "npm:postcss": "npm:postcss@8.4.31",
+      "npm:react-dom": "npm:react-dom@18.2.0_react@18.2.0",
       "npm:react-dom@^18.2.0": "npm:react-dom@18.2.0_react@18.2.0",
       "npm:react@^18.2.0": "npm:react@18.2.0",
       "npm:tailwindcss": "npm:tailwindcss@3.3.5_postcss@8.4.31",
@@ -454,6 +456,10 @@
           "normalize-path": "normalize-path@3.0.0",
           "readdirp": "readdirp@3.6.0"
         }
+      },
+      "classnames@2.5.0": {
+        "integrity": "sha512-FQuRlyKinxrb5gwJlfVASbSrDlikDJ07426TrfPsdGLvtochowmkbnSFdQGJ2aoXrSetq5KqGV9emvWpy+91xA==",
+        "dependencies": {}
       },
       "commander@4.1.1": {
         "integrity": "sha512-NOKm8xhkzAjzFx8B2v5OAHT+u5pRQc2UCa2Vq9jYL/31o2wi9mxBA7LIFs3sV5VSC49z6pEhfbMULvShKj26WA==",

@@ -53,7 +53,7 @@ const ProfileAvatar = (
   <img
     key="avatar"
     src={avatar}
-    className="w-[184px] h-[184px] m-12 rounded-full absolute bg-black"
+    className={"w-[184px] h-[184px] m-12 rounded-full absolute bg-black"}
   />
 );
 

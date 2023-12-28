@@ -3,6 +3,9 @@ import React, { useState, useMemo } from "react";
 export type { FC } from "react";
 export { React, useState, useMemo };
 
+import cn from "classnames";
+export { cn };
+
 // @deno-types="npm:@types/react-dom/client"
 import ReactDOM from "react-dom/client";
 export { ReactDOM };

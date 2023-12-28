@@ -1,5 +1,7 @@
 import { React, useState } from "./core/deps.ts";
 import { BeatLeaderProfile } from "./components/BeatLeaderProfile.tsx";
+import { BeatLeaderProfileLoading } from "./components/BeatLeaderProfile/BeatLeaderProfileLoading.tsx";
+import { BeatLeaderProfileError } from "./components/BeatLeaderProfile/BeatLeaderProfileError.tsx";
 
 export const PreviewTest = () => {
   const [userId, setUserId] = useState("76561198101647485");
@@ -15,6 +17,14 @@ export const PreviewTest = () => {
       </span>
       <div className="flex w-screen place-content-center m-3">
       <BeatLeaderProfile userId={userId} />
+      </div>
+      <h1>Loading:</h1>
+      <div className="flex flex-wrap gap-5 mt-10 w-screen justify-around items-center">
+        <BeatLeaderProfileLoading />
+      </div>
+      <h1>Error:</h1>
+      <div className="flex flex-wrap gap-5 mt-10 w-screen justify-around items-center">
+        <BeatLeaderProfileError />
       </div>
       <h1>Test data:</h1>
       <div className="flex flex-wrap gap-5 mt-10 w-screen justify-around items-center">
