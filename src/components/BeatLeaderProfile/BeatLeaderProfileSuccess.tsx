@@ -3,13 +3,9 @@ import { FC, React, useMemo } from "../../core/deps.ts";
 import { PlayerProfile, ProfileSettings } from "../../types/BeatLeader.ts";
 import { getOverlayUrlByName } from "../../utils/overlay.ts";
 
-function getFlagEmoji(countryCode: string) {
-  const codePoints = countryCode
-    .toUpperCase()
-    .split("")
-    .map((char) => 127397 + char.charCodeAt(0));
-  return String.fromCodePoint(...codePoints);
-}
+const Flag = ({ countryCode }: { countryCode: string }) => (
+  <img className="h-5" src={`/assets/flags/${countryCode.toLowerCase()}.png`} />
+);
 
 function isLightColor(colorHex6: string) {
   const s = colorHex6.split("#")[1];
@@ -47,8 +43,7 @@ type BeatLeaderProfileSuccessProps = Pick<
 >;
 
 const ProfileAvatar = (
-  { avatar }:
-    & Pick<PlayerProfile, "avatar">,
+  { avatar }: Pick<PlayerProfile, "avatar">,
 ) => (
   <img
     key="avatar"
@@ -60,11 +55,14 @@ const ProfileAvatar = (
 const ProfileAvatarOverlay = (
   { role, effectName, hue, saturation }:
     & Pick<PlayerProfile, "role">
-    & Pick<PlayerProfile["profileSettings"], "hue" | "effectName" | "saturation">
+    & Pick<
+      PlayerProfile["profileSettings"],
+      "hue" | "effectName" | "saturation"
+    >,
 ) => {
-  const roles = useMemo(() => role.split(","), [ role ]);
+  const roles = useMemo(() => role.split(","), [role]);
   const styleMemo = useMemo(() => ({
-    filter: `hue-rotate(${hue ?? "0"}deg) saturate(${saturation ?? "1"})`
+    filter: `hue-rotate(${hue ?? "0"}deg) saturate(${saturation ?? "1"})`,
   }), [hue, saturation]);
 
   const overlay = getOverlayUrlByName(effectName) ?? "";
@@ -108,8 +106,8 @@ const ProfileRankingStats = ({
 }: Pick<PlayerProfile, "pp" | "rank" | "countryRank" | "country">) => {
   return (
     <>
-      <div className="text-2xl text-shadow rounded">
-        {getFlagEmoji(country)} {countryRank}
+      <div className="text-2xl text-shadow rounded inline-flex items-center gap-1">
+        <Flag countryCode={country} /> {countryRank}
       </div>
       <div className="text-2xl text-shadow rounded mt-2">
         <i className="fas fa-globe-americas" /> {rank}
@@ -147,7 +145,12 @@ const ProfileSocialIcon = ({ service }: { service: string }) => {
     case "Twitter":
       return <i className="fab fa fa-twitter" />;
     case "BeatSaver":
-      return <img className="h-7 float-left inline hover:animate-spin" src="https://beatsaver.com/static/favicon/apple-touch-icon.png" />
+      return (
+        <img
+          className="h-7 float-left inline hover:animate-spin"
+          src="https://beatsaver.com/static/favicon/apple-touch-icon.png"
+        />
+      );
     default:
       return null;
   }
@@ -184,17 +187,18 @@ const ProfileSocial = (
 
 const ProfileSocials = ({ socials }: Pick<PlayerProfile, "socials">) => {
   const sortedSocials = useMemo(
-    () => socials.sort((x, y) => {
-      const res = y.service.length - x.service.length;
-      if (res !== 0) return res;
-       // YouTube, Discord and Twitter are the same length
-       // But YouTube is visually the longest, then Discord, then Twitter
-      if (x.service === "YouTube") return -1;
-      if (y.service === "YouTube") return 1;
-      if (x.service === "Discord") return -1;
-      if (y.service === "Discord") return 1;
-      return res;
-    }),
+    () =>
+      socials.sort((x, y) => {
+        const res = y.service.length - x.service.length;
+        if (res !== 0) return res;
+        // YouTube, Discord and Twitter are the same length
+        // But YouTube is visually the longest, then Discord, then Twitter
+        if (x.service === "YouTube") return -1;
+        if (y.service === "YouTube") return 1;
+        if (x.service === "Discord") return -1;
+        if (y.service === "Discord") return 1;
+        return res;
+      }),
     [socials],
   );
   return sortedSocials.map((social) => (
@@ -214,7 +218,10 @@ const ProfileClan = (
     };
   }, [color]);
   return (
-    <div className="text-xl px-2 py-1 rounded-xl rounded-l-none mt-2 w-max" style={memoStyle}>
+    <div
+      className="text-xl px-2 py-1 rounded-xl rounded-l-none mt-2 w-max"
+      style={memoStyle}
+    >
       {tag}
     </div>
   );
@@ -274,7 +281,7 @@ export const BeatLeaderProfileSuccess = ({
 }: BeatLeaderProfileSuccessProps) => {
   return (
     // Technical max height is around 500px, using 490px directly (without rems and other units) is far more safe here
-    <div className="w-80 h-[490px] bg-gray-500 relative">
+    <div className="w-80 h-[490px] bg-black relative">
       <ProfileCover profileCover={profileSettings.profileCover} />
       <div className="h-[17.5rem] w-full mt-[1.25rem] absolute top-0 left-0">
         <TopRight>
