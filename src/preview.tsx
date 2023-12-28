@@ -1,6 +1,5 @@
 import { PreviewTest } from "./PreviewTest.tsx";
 import { QueryClient, QueryClientProvider, React, ReactDOM } from "./core/deps.ts";
-import "./core/index.css";
 
 const queryClient = new QueryClient();
 

@@ -1,6 +1,7 @@
 import { PropsWithChildren } from "npm:@types/react";
 import { FC, React, useMemo } from "../../core/deps.ts";
 import { PlayerProfile, ProfileSettings } from "../../types/BeatLeader.ts";
+import { getOverlayUrlByName } from "../../utils/overlay.ts";
 
 function getFlagEmoji(countryCode: string) {
   const codePoints = countryCode
@@ -42,22 +43,42 @@ type BeatLeaderProfileSuccessProps = Pick<
   | "clans"
   | "socials"
   | "profileSettings"
+  | "role"
 >;
 
 const ProfileAvatar = (
-  { avatar, profileCover }:
-    & Pick<PlayerProfile, "avatar">
-    & Pick<ProfileSettings, "profileCover">,
+  { avatar }:
+    & Pick<PlayerProfile, "avatar">,
+) => (
+  <img
+    key="avatar"
+    src={avatar}
+    className="w-[184px] h-[184px] m-12 rounded-full absolute bg-black"
+  />
+);
+
+const ProfileAvatarOverlay = (
+  { role, effectName, hue, saturation }:
+    & Pick<PlayerProfile, "role">
+    & Pick<PlayerProfile["profileSettings"], "hue" | "effectName" | "saturation">
 ) => {
+  const roles = useMemo(() => role.split(","), [ role ]);
+  const styleMemo = useMemo(() => ({
+    filter: `hue-rotate(${hue ?? "0"}deg) saturate(${saturation ?? "1"})`
+  }), [hue, saturation]);
+
+  const overlay = getOverlayUrlByName(effectName) ?? "";
+
+  if (!effectName) return;
+
   return (
-    <>
-      {/* 184px x 184px are steam avatar dimensions */}
-      <img
-        key="avatar-small"
-        src={avatar}
-        className="w-[184px] h-[184px] m-12 rounded-full absolute bg-black"
-      />
-    </>
+    <img
+      key="avatar-overlay"
+      src={overlay}
+      style={styleMemo}
+      /* 17.5rem - 0.5rem = width has to be 17rem */
+      className="w-[17rem] h-[17rem] m-1 rounded-full absolute"
+    />
   );
 };
 
@@ -249,8 +270,8 @@ export const BeatLeaderProfileSuccess = ({
   socials,
   name,
   profileSettings,
+  role,
 }: BeatLeaderProfileSuccessProps) => {
-  console.log(profileSettings);
   return (
     // Technical max height is around 500px, using 490px directly (without rems and other units) is far more safe here
     <div className="w-80 h-[490px] bg-gray-500 relative">
@@ -268,7 +289,12 @@ export const BeatLeaderProfileSuccess = ({
           <div className="w-[17.5rem] h-[17.5rem] flex relative">
             <ProfileAvatar
               avatar={avatar}
-              profileCover={profileSettings.profileCover}
+            />
+            <ProfileAvatarOverlay
+              role={role}
+              effectName={profileSettings.effectName}
+              hue={profileSettings.hue}
+              saturation={profileSettings.saturation}
             />
             <BottomLeft>
               <ProfileRankingStats

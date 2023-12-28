@@ -18,6 +18,7 @@ export const PreviewTest = () => {
       </div>
       <h1>Test data:</h1>
       <div className="flex flex-wrap gap-5 mt-10 w-screen justify-around items-center">
+        <BeatLeaderProfile userId="76561198059961776" />
         <BeatLeaderProfile userId="76561198023909718" />
         <BeatLeaderProfile userId="76561198362923485" />
         <BeatLeaderProfile userId="76561198193496165" />
