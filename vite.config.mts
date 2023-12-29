@@ -28,7 +28,6 @@ export default defineConfig({
       },
     },
     assetsDir: ".",
-    copyPublicDir: true,
   },
   server: {
     fs: {

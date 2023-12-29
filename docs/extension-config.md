@@ -6,7 +6,7 @@ https://beatsaver.com,https://www.youtube.com,https://discordapp.com,https://twi
 
 ## Allowlist for Image Domains
 
-https://cdn.assets.beatleader.xyz,https://beatsaver.com,https://avatars.akamai.steamstatic.com
+https://cdn.assets.beatleader.xyz,https://beatsaver.com,https://avatars.akamai.steamstatic.com,https://cdn.flags.beatleader.xyz
 
 ## Allowlist for URL Fetching Domains
 

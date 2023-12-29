@@ -3,8 +3,9 @@ import { FC, React, useMemo } from "../../core/deps.ts";
 import { PlayerProfile, ProfileSettings } from "../../types/BeatLeader.ts";
 import { getOverlayUrlByName } from "../../utils/overlay.ts";
 
+const FLAG_CDN = "https://cdn.flags.beatleader.xyz";
 const Flag = ({ countryCode }: { countryCode: string }) => (
-  <img className="h-5" src={`./assets/flags/${countryCode.toLowerCase()}.png`} />
+  <img className="h-5" src={`${FLAG_CDN}/${countryCode.toLowerCase()}.png`} />
 );
 
 function isLightColor(colorHex6: string) {
