@@ -9,15 +9,18 @@
       "npm:@tanstack/react-query": "npm:@tanstack/react-query@5.12.2_react@18.2.0",
       "npm:@types/react": "npm:@types/react@18.2.41",
       "npm:@types/react-dom": "npm:@types/react-dom@18.2.17",
+      "npm:@types/twitch-ext": "npm:@types/twitch-ext@1.24.9",
       "npm:@vitejs/plugin-react-swc": "npm:@vitejs/plugin-react-swc@3.5.0_vite@5.0.2",
       "npm:@vituum/vite-plugin-tailwindcss": "npm:@vituum/vite-plugin-tailwindcss@1.1.0_postcss@8.4.31",
       "npm:classnames": "npm:classnames@2.5.0",
       "npm:postcss": "npm:postcss@8.4.31",
       "npm:react-dom": "npm:react-dom@18.2.0_react@18.2.0",
       "npm:react-dom@^18.2.0": "npm:react-dom@18.2.0_react@18.2.0",
+      "npm:react-hook-form": "npm:react-hook-form@7.49.2_react@18.2.0",
       "npm:react@^18.2.0": "npm:react@18.2.0",
       "npm:tailwindcss": "npm:tailwindcss@3.3.5_postcss@8.4.31",
-      "npm:vite@5.0.2": "npm:vite@5.0.2"
+      "npm:vite@5.0.2": "npm:vite@5.0.2",
+      "npm:zod": "npm:zod@3.22.4"
     },
     "npm": {
       "@alloc/quick-lru@5.2.0": {
@@ -352,6 +355,10 @@
       },
       "@types/scheduler@0.16.8": {
         "integrity": "sha512-WZLiwShhwLRmeV6zH+GkbOFT6Z6VklCItrDioxUnv+u4Ll+8vKeFySoFyK/0ctcRpOmwAicELfmys1sDc/Rw+A==",
+        "dependencies": {}
+      },
+      "@types/twitch-ext@1.24.9": {
+        "integrity": "sha512-YUArlcgu3Hfln0odpkhZXtQIhKquR9usEjWmkpgz+uiUsAFmBDtA27uxLTaOWZHSfWcz8va2mQaNm1g+JRoh0w==",
         "dependencies": {}
       },
       "@vitejs/plugin-react-swc@3.5.0_vite@5.0.2": {
@@ -819,6 +826,12 @@
           "scheduler": "scheduler@0.23.0"
         }
       },
+      "react-hook-form@7.49.2_react@18.2.0": {
+        "integrity": "sha512-TZcnSc17+LPPVpMRIDNVITY6w20deMdNi6iehTFLV1x8SqThXGwu93HjlUVU09pzFgZH7qZOvLMM7UYf2ShAHA==",
+        "dependencies": {
+          "react": "react@18.2.0"
+        }
+      },
       "react@18.2.0": {
         "integrity": "sha512-/3IjMdb2L9QbBdWiW5e3P2/npwMBaU9mHCSCUzNln0ZCYbcfTsGbTJrU/kGemdH2IWmB2ioZ+zkxtmq6g09fGQ==",
         "dependencies": {
@@ -985,6 +998,10 @@
       },
       "yaml@2.3.4": {
         "integrity": "sha512-8aAvwVUSHpfEqTQ4w/KMlf3HcRdt50E5ODIQJBw1fQ5RL34xabzxtUlzTXVqc4rkZsPbvrXKWnABCD7kWSmocA==",
+        "dependencies": {}
+      },
+      "zod@3.22.4": {
+        "integrity": "sha512-iC+8Io04lddc+mVqQ9AZ7OQ2MrUKGN+oIQyq1vemgt46jwCwLfhq7/pwnBnNXXXZb8VTVLKwp9EDkx+ryxIWmg==",
         "dependencies": {}
       }
     }

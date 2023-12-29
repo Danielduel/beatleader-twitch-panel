@@ -2,8 +2,10 @@
   "imports": {
     "react": "npm:react",
     "react-dom/client": "npm:react-dom/client",
+    "react-hook-form": "npm:react-hook-form",
     "@tanstack/react-query": "npm:@tanstack/react-query",
     "classnames": "npm:classnames",
+    "zod": "npm:zod",
     "chart.js": "npm:chart.js@3.5.0",
     "chartjs-adapter-luxon": "npm:chartjs-adapter-luxon@1.1.0",
     "chartjs-plugin-zoom": "npm:chartjs-plugin-zoom@1.1.1"

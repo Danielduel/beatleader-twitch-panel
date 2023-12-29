@@ -1,14 +1,14 @@
 import { PropsWithChildren } from "npm:@types/react";
-import { cn, FC, React, useMemo, useState } from "../../core/deps.ts";
+import { FC, React, cn } from "../../core/deps.ts";
 
 const ProfileAvatar = () => {
-  const avatar = "https://beatleader.xyz/assets/apple-touch-icon-152x152.png";
+  const avatar = "https://beatleader.xyz/assets/apple-touch-icon-152x152.png"
 
   return (
     <img
       key="avatar"
       src={avatar}
-      className={"w-[184px] h-[184px] m-12 absolute opacity-50 rotate-12"}
+      className={"w-[184px] h-[184px] m-12 absolute opacity-50 animate-bounce grayscale-[1]"}
     />
   );
 };
@@ -17,7 +17,7 @@ const ProfileCover = () => {
   return (
     <div
       key="cover"
-      className="h-full w-full absolute bg-red-900"
+      className="h-full w-full absolute cover-loading bg-[#3a0023]"
     />
   );
 };
@@ -25,15 +25,9 @@ const ProfileCover = () => {
 const ProfileRankingStatsLoading = () => {
   return (
     <>
-      <div className="text-2xl rounded bg-red-500 w-16">
-        &nbsp;
-      </div>
-      <div className="text-2xl rounded mt-2 bg-red-500 w-20">
-        &nbsp;
-      </div>
-      <div className="text-3xl rounded mt-2 bg-red-500 w-32">
-        &nbsp;
-      </div>
+      <div className="text-2xl rounded bg-slate-500 w-16 opacity-90 grayscale-[1]">&nbsp;</div>
+      <div className="text-2xl rounded mt-2 bg-slate-500 w-20 opacity-80 grayscale-[1]">&nbsp;</div>
+      <div className="text-3xl rounded mt-2 bg-slate-500 w-32 opacity-70 grayscale-[1]">&nbsp;</div>
     </>
   );
 };
@@ -43,24 +37,22 @@ const ProfileSocialLoading = ({ i }: { i: number }) => {
     <div
       className={cn(
         {
-          "w-24 opacity-90": i === 0,
-          "w-20 opacity-80": i === 1,
-          "w-16 opacity-70": i === 2,
+          "w-24 opacity-90 animate-pulse": i === 0,
+          "w-20 opacity-80 animate-pulse": i === 1,
+          "w-16 opacity-70 animate-pulse": i === 2,
         },
-        "h-7 box-content  px-2 py-1 block rounded-xl rounded-r-none mt-2 ml-auto bg-red-500",
+        "h-7 box-content grayscale-[1] px-2 py-1 block rounded-xl rounded-r-none mt-2 ml-auto bg-slate-500"
       )}
     />
   );
 };
 
 const ProfileSocialsLoading = () => {
-  return (
-    <>
-      <ProfileSocialLoading key="social-1" i={0} />
-      <ProfileSocialLoading key="social-2" i={1} />
-      <ProfileSocialLoading key="social-3" i={2} />
-    </>
-  );
+  return <>
+    <ProfileSocialLoading key="social-1" i={0} />
+    <ProfileSocialLoading key="social-2" i={1} />
+    <ProfileSocialLoading key="social-3" i={2} />
+  </>
 };
 
 const ProfileClanLoading = ({ i }: { i: number }) => {
@@ -68,24 +60,22 @@ const ProfileClanLoading = ({ i }: { i: number }) => {
     <div
       className={cn(
         {
-          "opacity-90": i === 0,
-          "opacity-80": i === 1,
-          "opacity-70 w-10": i === 2,
+          "opacity-90 animate-pulse": i === 0,
+          "opacity-80 animate-pulse": i === 1,
+          "opacity-70 w-10 animate-pulse": i === 2,
         },
-        "w-12 h-7 box-content px-2 py-1 block rounded-xl rounded-l-none mt-2 mr-auto bg-red-500",
+        "w-12 h-7 box-content grayscale-[1] px-2 py-1 block rounded-xl rounded-l-none mt-2 mr-auto bg-slate-500"
       )}
     />
   );
 };
 
 const ProfileClansLoading = () => {
-  return (
-    <>
-      <ProfileClanLoading key="clan-1" i={0} />
-      <ProfileClanLoading key="clan-2" i={1} />
-      <ProfileClanLoading key="clan-3" i={2} />
-    </>
-  );
+  return <>
+    <ProfileClanLoading key="clan-1" i={0} />
+    <ProfileClanLoading key="clan-2" i={1} />
+    <ProfileClanLoading key="clan-3" i={2} />
+  </>
 };
 
 const TopLeft: FC<PropsWithChildren> = ({ children }) => {
@@ -120,7 +110,7 @@ const BottomRight: FC<PropsWithChildren> = ({ children }) => {
   );
 };
 
-export const BeatLeaderProfileError = () => {
+export const BeatLeaderProfileLoading = () => {
   return (
     // Technical max height is around 500px, using 490px directly (without rems and other units) is far more safe here
     <div className="w-80 h-[490px] bg-gray-500 relative">
@@ -141,7 +131,7 @@ export const BeatLeaderProfileError = () => {
               <ProfileRankingStatsLoading />
             </BottomLeft>
           </div>
-          <div className="w-64 bg-red-500 rounded  mt-4 text-3xl text-shadow overflow-ellipsis line-clamp-1">
+          <div className="w-64 bg-slate-500 rounded grayscale-[1] mt-4 text-3xl text-shadow overflow-ellipsis line-clamp-1">
             &nbsp;
           </div>
         </div>

@@ -1,20 +1,26 @@
-import { useBeatLeaderUserInfo } from "../core/api.ts";
-import { React, FC } from "../core/deps.ts";
-import { BeatLeaderProfileError } from "./BeatLeaderProfile/BeatLeaderProfileError.tsx";
-import { BeatLeaderProfileLoading } from "./BeatLeaderProfile/BeatLeaderProfileLoading.tsx";
-import { BeatLeaderProfileSuccess } from "./BeatLeaderProfile/BeatLeaderProfileSuccess.tsx";
+import { React, FC, useMemo } from "../core/deps.ts";
+import { Profile } from "./BeatLeaderProfile/Profile.tsx"
 
 type BeatLeaderProfileProps = {
-  userId: string;
+  beatLeaderUserTarget: string;
 };
 
 export const BeatLeaderProfile: FC<BeatLeaderProfileProps> = ({
-  userId
+  beatLeaderUserTarget
 }) => {
-  const { data, isLoading } = useBeatLeaderUserInfo(userId);
+  const userId = useMemo(() => {
+    // https://beatleader.xyz/u/76561198023909718
+    // https://beatleader.xyz/u/76561198023909718/beatleader/pp/asc/1
+    // 76561198023909718
+    // https://beatleader.xyz/u/14332
+    // https://beatleader.xyz/u/14332/beatleader/pp/desc/1
+    // 14332
 
-  if (isLoading) return <BeatLeaderProfileLoading />;
-  if (!data) return <BeatLeaderProfileError />;
+    const _0 = beatLeaderUserTarget;
+    const _1 = _0.split("https://beatleader.xyz/u/").reverse()[0];
+    const _2 = _1.split("/")[0];
+    return _2;
+  }, [beatLeaderUserTarget])
 
-  return <BeatLeaderProfileSuccess {...data} />;
+  return <Profile userId={userId} />
 }
