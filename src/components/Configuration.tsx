@@ -44,13 +44,13 @@ export const Configuration = () => {
         </div>
         <input
           className="block bg-white text-black p-2 w-96 rounded"
-          placeholder="https://beatleader.xyz/u/012345678912"
+          placeholder="https://beatleader.net/u/012345678912"
           {...form.register("beatLeaderUserTarget")}
         />
         <a
           target="_blank"
           rel="noopener noreferrer nofollow"
-          href="https://beatleader.xyz/"
+          href="https://beatleader.net/"
           className="mt-2 underline hover:cursor-pointer"
         >
           Open BeatLeader

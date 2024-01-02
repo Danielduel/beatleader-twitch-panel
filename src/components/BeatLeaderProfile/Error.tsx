@@ -2,7 +2,7 @@ import { PropsWithChildren } from "npm:@types/react";
 import { cn, FC, React } from "../../core/deps.ts";
 
 const ProfileAvatar = () => {
-  const avatar = "https://beatleader.xyz/assets/apple-touch-icon-152x152.png";
+  const avatar = "https://beatleader.net/assets/apple-touch-icon-152x152.png";
 
   return (
     <img

@@ -9,15 +9,15 @@ export const BeatLeaderProfile: FC<BeatLeaderProfileProps> = ({
   beatLeaderUserTarget
 }) => {
   const userId = useMemo(() => {
-    // https://beatleader.xyz/u/76561198023909718
-    // https://beatleader.xyz/u/76561198023909718/beatleader/pp/asc/1
+    // https://beatleader.net/u/76561198023909718
+    // https://beatleader.net/u/76561198023909718/beatleader/pp/asc/1
     // 76561198023909718
-    // https://beatleader.xyz/u/14332
-    // https://beatleader.xyz/u/14332/beatleader/pp/desc/1
+    // https://beatleader.net/u/14332
+    // https://beatleader.net/u/14332/beatleader/pp/desc/1
     // 14332
 
     const _0 = beatLeaderUserTarget;
-    const _1 = _0.split("https://beatleader.xyz/u/").reverse()[0];
+    const _1 = _0.split("https://beatleader.net/u/").reverse()[0];
     const _2 = _1.split("/")[0];
     return _2;
   }, [beatLeaderUserTarget])

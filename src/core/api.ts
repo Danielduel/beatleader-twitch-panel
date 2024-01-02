@@ -1,7 +1,7 @@
 import { useQuery } from "./deps.ts";
 import { PlayerProfile } from "../types/BeatLeader.ts";
 
-const url = "https://api.beatleader.xyz";
+const url = "https://api.beatleader.net";
 
 export const useBeatLeaderUserInfo = (userId: number | string) => {
   // const client = useQueryClient();

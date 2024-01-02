@@ -22,17 +22,17 @@ export const PreviewTest = () => {
       </div>
       <h1>Test data from user input:</h1>
       <div className="flex flex-wrap gap-5 mt-10 w-screen justify-around items-center">
-        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.xyz/u/76561198023909718" />
-        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.xyz/u/76561198023909718/beatleader/pp/asc/1" />
+        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.net/u/76561198023909718" />
+        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.net/u/76561198023909718/beatleader/pp/asc/1" />
         <BeatLeaderProfile beatLeaderUserTarget="76561198023909718" />
-        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.xyz/u/14332" />
-        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.xyz/u/14332/beatleader/pp/desc/1" />
+        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.net/u/14332" />
+        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.net/u/14332/beatleader/pp/desc/1" />
         <BeatLeaderProfile beatLeaderUserTarget="14332" />
       </div>
       <h1>Test data from user input that should fail:</h1>
       <div className="flex flex-wrap gap-5 mt-10 w-screen justify-around items-center">
-        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.xyz" />
-        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.xyz/u/" />
+        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.net" />
+        <BeatLeaderProfile beatLeaderUserTarget="https://beatleader.net/u/" />
         <BeatLeaderProfile beatLeaderUserTarget="ht561198023909718" />
         <BeatLeaderProfile beatLeaderUserTarget="https://b09718/beatleader/pp/asc/1" />
         <BeatLeaderProfile beatLeaderUserTarget="asfsafsa" />

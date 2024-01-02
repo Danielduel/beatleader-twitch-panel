@@ -1,4 +1,4 @@
-export const BL_ASSETS_CDN = "https://cdn.assets.beatleader.xyz";
+export const BL_ASSETS_CDN = "https://cdn.assets.beatleader.net";
 
 const BOOSTER = ["booster"];
 const CREATOR = [
